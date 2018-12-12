@@ -53,7 +53,7 @@ class AttachRefreshTokenOnSuccessListener
             $datetime->modify('+'.$this->ttl.' seconds');
 
             $refreshToken = $this->refreshTokenManager->create();
-            $refreshToken->setUsername($user->getUsername());
+            $refreshToken->setUsername($user->getEmail());
             $refreshToken->setRefreshToken();
             $refreshToken->setValid($datetime);
 
